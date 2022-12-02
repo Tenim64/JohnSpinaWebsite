@@ -11,12 +11,22 @@
 :root:has(#themeCheck:checked) .sun {
     opacity: 0;
     height: 0;
+}
+:root:has(#themeCheck:checked) #navbarNav.collapse:not(.show) .sun {
     transform: translate(100%, 100%);
+}
+:root:has(#themeCheck:checked) #navbarNav.collapse.show .sun {
+    transform: translate(-100%, 100%);
 }
 :root:has(#themeCheck:not(:checked)) .moon {
     opacity: 0;
     height: 0;
-    transform: translate(100%, -100%);
+}
+:root:has(#themeCheck:not(:checked)) #navbarNav.collapse:not(.show) .moon {
+    transform: translate(100%, -200%);
+}
+:root:has(#themeCheck:not(:checked)) #navbarNav.collapse.show .moon {
+    transform: translate(-100%, -200%);
 }
 :root:has(#themeCheck:checked) .navbar-brand img {
     filter: invert(1) saturate(2);
@@ -35,6 +45,14 @@ nav {
 .navbar-brand img {
     transition: var(--theme-transition-speed);
 }
+button.navbar-toggler {
+    border: 2px solid transparent;
+    border-radius: 0.8rem;
+}
+button.navbar-toggler:focus {
+    box-shadow: none;
+    border: 2px solid var(--fg-color-1);
+}
 nav a.nav-link {
     color: var(--fg-color-2) !important;
     transition: var(--theme-transition-speed);
@@ -45,9 +63,24 @@ nav a.nav-link:hover, nav a.nav-link.active {
 #navbarNav, #navbarNav .navbar-nav {
     width: 100%;
 }
+#navbarNav .nav-item {
+    width: fit-content;
+    transition: var(--theme-transition-speed);
+}
+#navbarNav.collapse.show .nav-item:hover {
+    padding-left: 0.5rem;
+}
+#navbarNav.collapsing .nav-item a, #navbarNav.collapse.show .nav-item a {
+    display: inline-block;
+    padding-bottom: 0.1rem;
+}
 #navbarNav .navbar-nav>:last-child {
     margin-left: auto;
     margin-right: 0.1rem;
+}
+#navbarNav.collapsing .navbar-nav>:last-child, #navbarNav.collapse.show .navbar-nav>:last-child {
+    margin-left: -0.2rem;
+    margin-right: auto;
 }
 #theme-toggle {
     background: none;
