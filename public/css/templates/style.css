@@ -155,7 +155,7 @@ footer h5 {
     transition: all var(--theme-transition-speed);
 }
 footer h5:hover {
-    color: var(--bs-link-color) !important;
+    text-decoration: underline;
 }
 footer h5 a {
     text-decoration: none;
@@ -164,9 +164,12 @@ footer h5 a {
 footer li {
     margin: 0.4em 0;
     line-height: 1.4em;
-    transition: all var(--theme-transition-speed);
 }
-footer li a {
+footer li a, footer li a:hover {
+    transition: all var(--theme-transition-speed);
     color: var(--fg-color-3);
     text-decoration: none;
+}
+footer li a:hover {
+    text-decoration: underline;
 }
