@@ -1,0 +1,34 @@
+:root:has(#themeCheck:not(:checked)){
+    --fg-color-1: #111;
+    --fg-color-2: #666;
+    --bg-color-1: #ddd;
+    --bg-color-2: #eee;
+}
+:root:has(#themeCheck:checked){
+    --fg-color-1: #fff;
+    --fg-color-2: #ddd;
+    --bg-color-1: #444;
+    --bg-color-2: #222;
+}
+
+html, body {
+    overflow-x: hidden;
+}
+
+#content {
+    transition-property: background, color;
+    transition-duration: 0.8s;
+}
+p {
+    color: var(--fg-color-2);
+}
+h1, h2 {
+    color: var(--fg-color-1);
+}
+#content {
+    background-color: var(--bg-color-2);
+}
+.btn-dark {
+    background-color: var(--fg-color-1);
+    color: var(--bg-color-1);
+}

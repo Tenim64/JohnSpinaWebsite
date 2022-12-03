@@ -3,12 +3,24 @@
   <head>
     <%- include('../../templates/head.ejs') %>
     <link rel="stylesheet" href="css/home/style.css">
-    <title>John Spina</title>
+    <title>John Spina | Home</title>
   </head>
   <body>
     <div id="container">
       <%- include('../../templates/header.ejs') %>
-      <div id="content">
+      <div id="content" class="container-fluid">
+        <div class="row px-4 py-2 pe-lg-0 align-items-center shadow-lg">
+          <div class="col-12 offset-0 col-sm-10 offset-sm-1 col-lg-6 offset-lg-0 p-3 p-lg-5">
+            <h1 class="display-4 fw-bold lh-1">John Spina's garage</h1>
+            <p class="lead mt-3">Zonder John op baan, da's een flater begaan!</p>
+            <div class="d-grid gap-2 d-md-flex justify-content-md-start mt-4">
+              <button type="button" class="btn btn-dark btn-lg px-4 me-md-2 fw-bold">Wat doen wij?</button>
+            </div>
+          </div>
+          <div class="col-12 offset-0 col-sm-10 offset-sm-1 col-lg-6 offset-lg-0 p-3 p-lg-5 pe-lg-4">
+            <img class="rounded-5 d-block mx-lg-auto img-fluid pe-lg-3" src="images/ARGameRepresentation.jpeg" alt="AR game representation" width="1200" height="675" loading="lazy">
+          </div>
+        </div>
       </div>
       <div id="footer">
       </div>

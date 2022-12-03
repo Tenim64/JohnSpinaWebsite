@@ -1,13 +1,3 @@
-:root:has(#themeCheck:not(:checked)){
-    --fg-color-1: #111;
-    --fg-color-2: #666;
-    --bg-color-1: #eee;
-}
-:root:has(#themeCheck:checked){
-    --fg-color-1: #fff;
-    --fg-color-2: #ddd;
-    --bg-color-1: #222;
-}
 :root:has(#themeCheck:checked) .sun {
     opacity: 0;
     height: 0;
@@ -67,7 +57,7 @@ nav a.nav-link:hover, nav a.nav-link.active {
     width: fit-content;
     transition: var(--theme-transition-speed);
 }
-#navbarNav.collapsing .nav-item a, #navbarNav.collapse.show .nav-item a {
+#navbarNav .nav-item a {
     display: inline-block;
     padding-bottom: 0.1rem;
 }
@@ -77,8 +67,14 @@ nav a.nav-link:hover, nav a.nav-link.active {
 }
 #navbarNav .nav-item:not(:last-child):hover {
     padding-left: 0.5rem;
+    text-decoration: underline;
 }
 @media (min-width: 992px) {
+    #navbarNav .nav-item a {
+        display: unset;
+        padding-bottom: 0;
+        margin: 0 0.5rem;
+    }
     #navbarNav .nav-item:not(:last-child):hover {
         padding-left: 0;
     }
