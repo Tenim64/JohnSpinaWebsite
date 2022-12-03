@@ -11,21 +11,21 @@
 :root:has(#themeCheck:checked) .sun {
     opacity: 0;
     height: 0;
-    transform: translate(-50%, 0%);
+    transform: translate(50%, 100%);
 }
 @media (min-width: 992px) {
-    :root:has(#themeCheck:checked) #navbarNav.collapse:not(.show) .sun {
-        transform: translate(100%, 100%);
+    :root:has(#themeCheck:checked) .sun {
+        transform: translate(75%, 150%);
     }
 }
 :root:has(#themeCheck:not(:checked)) .moon {
     opacity: 0;
     height: 0;
-    transform: translate(-50%, 0%);
+    transform: translate(-50%, 100%);
 }
 @media (min-width: 992px) {
     :root:has(#themeCheck:not(:checked)) .moon {
-        transform: translate(100%, -200%);
+        transform: translate(75%, -150%);
     }
 }
 :root:has(#themeCheck:checked) .navbar-brand img, :root:has(#themeCheck:checked) .navbar-toggler-icon {
@@ -67,7 +67,7 @@ nav a.nav-link:hover, nav a.nav-link.active {
     width: fit-content;
     transition: var(--theme-transition-speed);
 }
-#navbarNav.collapse.show .nav-item:hover {
+#navbarNav.collapse.show .nav-item:not(:has(#theme-toggle)):hover {
     padding-left: 0.5rem;
 }
 #navbarNav.collapsing .nav-item a, #navbarNav.collapse.show .nav-item a {
@@ -85,13 +85,20 @@ nav a.nav-link:hover, nav a.nav-link.active {
         margin-top: -0.2rem;
     }
 }
+nav form {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 #theme-toggle {
+    position: relative;
     cursor: pointer;
     background: none;
     border: 0;
     color: var(--fg-color-2);
-    height: 3rem;
     aspect-ratio: 1/1;
+    padding: 0;
 }
 #theme-toggle:hover {
     color: var(--fg-color-1);
@@ -100,9 +107,26 @@ nav a.nav-link:hover, nav a.nav-link.active {
     width: 100%;
     height: 100%;
 }
-#theme-toggle .sun, #theme-toggle .moon {
+#theme-toggle, #theme-toggle>* {
+    height: 2.5rem;
+}
+#theme-toggle>* {
     transition: var(--theme-transition-speed);
     transform: translate(0, 0);
+    position: absolute;
+    height: 2.5rem;
+    padding: 0.3rem;
+}
+@media (min-width: 992px) {
+    #theme-toggle, #theme-toggle>* {
+        height: 2.2rem;
+    }
+    #theme-toggle {
+        margin-right: 0.2rem;
+    }
+    #theme-toggle>* {
+        padding: 0;
+    }
 }
 #themeCheck {
     opacity: 0;
