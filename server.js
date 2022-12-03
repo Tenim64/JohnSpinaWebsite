@@ -12,8 +12,8 @@ app.set('views', localPath.join(__dirname, 'views/pages'))
 app.use(express.static(__dirname + '/public'))
 app.use(favicon(localPath.join(__dirname,'/public/images/favicon.ico')))
 
-app.get(['/', '/home'], (req, res) => {
-    const theme = req.cookies.theme
+app.all('/*', (req, res, next) => {
+    let theme = req.cookies.theme
     if (theme === null){
         theme = 'light';
         res.cookie('theme',theme,{
@@ -22,7 +22,21 @@ app.get(['/', '/home'], (req, res) => {
             sameSite: 'lax'
         })
     }
-    res.render('home/index.ejs', {theme: theme})
+    req.theme = theme
+    next()
+})
+
+app.get(['/', '/home'], (req, res) => {
+    res.render('home/index.ejs', {theme: req.theme})
+})
+app.get('/producten', (req, res) => {
+    res.render('producten/index.ejs', {theme: req.theme})
+})
+app.get('/workshops', (req, res) => {
+    res.render('producten/index.ejs', {theme: req.theme})
+})
+app.get('/contact', (req, res) => {
+    res.render('producten/index.ejs', {theme: req.theme})
 })
 
 app.listen(80)

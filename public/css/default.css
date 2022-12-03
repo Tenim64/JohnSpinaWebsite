@@ -12,34 +12,42 @@
     --bg-color-1: #444;
     --bg-color-2: #222;
 }
+:root {
+    --theme-transition-speed: 0.8s;
+}
 
 html, body {
     overflow-x: hidden;
 }
 
+img {
+    -webkit-transition : -webkit-filter var(--theme-transition-speed) linear;
+}
 #content, #content button {
-    transition-delay: 0s;
-    transition-property: background, color;
-    transition-duration: 0.8s;
+    transition: all var(--theme-transition-speed) 0s;
 }
 p, small {
     color: var(--fg-color-2) !important;
+    transition: all var(--theme-transition-speed);
 }
 h1, h2, h3, h4, h5 {
     color: var(--fg-color-1) !important;
+    transition: all var(--theme-transition-speed);
 }
 i.bi {
-    color: var(--fg-color-1)
+    color: var(--fg-color-1);
+    transition: all var(--theme-transition-speed);
 }
 #content {
     background-color: var(--bg-color-2);
+    transition: all var(--theme-transition-speed);
 }
-.btn-dark {
+.btn-dark, .btn-dark:hover {
     background-color: var(--fg-color-1);
     color: var(--bg-color-2);
 }
 .btn-dark:hover {
-    filter: contrast(0.9);
+    filter: contrast(0.75);
 }
 .feature-title {
     display: grid;

@@ -28,7 +28,6 @@
 }
 nav {
     width: 100%;
-    --theme-transition-speed: 0.5s;
     font-size: 1.3rem;
     background-color: var(--bg-color-1);
     transition: var(--theme-transition-speed);
@@ -36,9 +35,6 @@ nav {
 .navbar-brand {
     margin-left: 0.3rem;
     margin-right: 0.8rem !important;
-}
-.navbar-brand img {
-    transition: var(--theme-transition-speed);
 }
 button.navbar-toggler {
     border: 2px solid transparent;
@@ -154,16 +150,21 @@ footer img.logo {
     aspect-ratio: 1/1;
 }
 footer h5 {
-    border-left: 3px solid var(--fg-color-1);
+    border-left: 3px solid currentColor;
     font-size: 1.3em;
+    transition: all var(--theme-transition-speed);
+}
+footer h5:hover {
+    color: var(--bs-link-color) !important;
 }
 footer h5 a {
-    color: var(--fg-color-1);
     text-decoration: none;
+    color: inherit !important;
 }
 footer li {
     margin: 0.4em 0;
     line-height: 1.4em;
+    transition: all var(--theme-transition-speed);
 }
 footer li a {
     color: var(--fg-color-3);
