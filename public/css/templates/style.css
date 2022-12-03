@@ -18,11 +18,16 @@
         transform: translate(75%, -150%);
     }
 }
-:root:has(#themeCheck:checked) .navbar-brand img, :root:has(#themeCheck:checked) .navbar-toggler-icon {
+:root:has(#themeCheck:checked) .logo, :root:has(#themeCheck:checked) .navbar-toggler-icon {
     filter: invert(1);
 }
 
+#content {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
 nav {
+    width: 100%;
     --theme-transition-speed: 0.5s;
     font-size: 1.3rem;
     background-color: var(--bg-color-1);
@@ -133,4 +138,34 @@ nav form {
     width: 0;
     height: 0;
     position: absolute;
+}
+
+body {
+    background-color: var(--bg-color-1);
+}
+
+footer {
+    background-color: var(--bg-color-1);
+    font-size: 1.1rem;
+}
+footer img.logo {
+    width: 80%;
+    transform: scale(1.1);
+    aspect-ratio: 1/1;
+}
+footer h5 {
+    border-left: 3px solid var(--fg-color-1);
+    font-size: 1.3em;
+}
+footer h5 a {
+    color: var(--fg-color-1);
+    text-decoration: none;
+}
+footer li {
+    margin: 0.4em 0;
+    line-height: 1.4em;
+}
+footer li a {
+    color: var(--fg-color-3);
+    text-decoration: none;
 }

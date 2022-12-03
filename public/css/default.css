@@ -1,12 +1,14 @@
 :root:has(#themeCheck:not(:checked)){
     --fg-color-1: #111;
-    --fg-color-2: #666;
+    --fg-color-2: #555;
+    --fg-color-3: #666;
     --bg-color-1: #ddd;
     --bg-color-2: #eeeeee;
 }
 :root:has(#themeCheck:checked){
     --fg-color-1: #fff;
     --fg-color-2: #ddd;
+    --fg-color-3: #bbb;
     --bg-color-1: #444;
     --bg-color-2: #222;
 }
@@ -20,11 +22,11 @@ html, body {
     transition-property: background, color;
     transition-duration: 0.8s;
 }
-p {
-    color: var(--fg-color-2);
+p, small {
+    color: var(--fg-color-2) !important;
 }
 h1, h2, h3, h4, h5 {
-    color: var(--fg-color-1);
+    color: var(--fg-color-1) !important;
 }
 i.bi {
     color: var(--fg-color-1)
