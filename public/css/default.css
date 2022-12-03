@@ -21,6 +21,7 @@ html, body {
 }
 
 img {
+    transition: var(--theme-transition-speed);
     -webkit-transition : -webkit-filter var(--theme-transition-speed) linear;
 }
 #content, #content button {
