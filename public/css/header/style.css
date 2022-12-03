@@ -98,6 +98,7 @@ nav form {
     color: var(--fg-color-2);
     aspect-ratio: 1/1;
     padding: 0;
+    margin-bottom: 0.2rem;
 }
 #theme-toggle:hover {
     color: var(--fg-color-1);
@@ -107,13 +108,12 @@ nav form {
     height: 100%;
 }
 #theme-toggle, #theme-toggle>* {
-    height: 2.5rem;
+    height: 2.3rem;
 }
 #theme-toggle>* {
     transition: var(--theme-transition-speed);
-    transform: translate(0, 0);
+    transform: translate(0,0);
     position: absolute;
-    height: 2.5rem;
     padding: 0.3rem;
 }
 @media (min-width: 992px) {
@@ -121,6 +121,7 @@ nav form {
         height: 2.2rem;
     }
     #theme-toggle {
+        margin: 0;
         margin-right: 0.2rem;
     }
     #theme-toggle>* {

@@ -2,7 +2,7 @@
     --fg-color-1: #111;
     --fg-color-2: #666;
     --bg-color-1: #ddd;
-    --bg-color-2: #eee;
+    --bg-color-2: #eeeeee;
 }
 :root:has(#themeCheck:checked){
     --fg-color-1: #fff;
@@ -15,20 +15,37 @@ html, body {
     overflow-x: hidden;
 }
 
-#content {
+#content, #content button {
+    transition-delay: 0s;
     transition-property: background, color;
     transition-duration: 0.8s;
 }
 p {
     color: var(--fg-color-2);
 }
-h1, h2 {
+h1, h2, h3, h4, h5 {
     color: var(--fg-color-1);
+}
+i.bi {
+    color: var(--fg-color-1)
 }
 #content {
     background-color: var(--bg-color-2);
 }
 .btn-dark {
     background-color: var(--fg-color-1);
-    color: var(--bg-color-1);
+    color: var(--bg-color-2);
+}
+.btn-dark:hover {
+    filter: contrast(0.9);
+}
+.feature-title {
+    display: grid;
+    grid-template-columns: auto 1fr;
+}
+.feature-title .feature-icon {
+    display: inline-flex;
+    align-items: top;
+    justify-content: center;
+    transform: translateY(-0.2rem);
 }
