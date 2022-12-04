@@ -154,12 +154,12 @@ footer h5 {
     font-size: 1.3em;
     transition: all var(--theme-transition-speed);
 }
-footer h5:hover {
-    text-decoration: underline;
-}
 footer h5 a {
     text-decoration: none;
     color: inherit !important;
+}
+footer h5 a:hover {
+    text-decoration: underline;
 }
 footer li {
     margin: 0.4em 0;

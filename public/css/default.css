@@ -2,8 +2,8 @@
     --fg-color-1: #111;
     --fg-color-2: #555;
     --fg-color-3: #666;
-    --bg-color-1: #ddd;
-    --bg-color-2: #eeeeee;
+    --bg-color-1: #eee;
+    --bg-color-2: #fff;
 }
 :root:has(#themeCheck:checked){
     --fg-color-1: #fff;
