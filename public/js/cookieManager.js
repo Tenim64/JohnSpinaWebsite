@@ -27,7 +27,6 @@ function themeSetter() {
     }else {
         theme = 'light';
     }
-    console.log(theme);
     let cookies = document.cookie.split(';');
     const themeIndex = cookies.findIndex(cookie => cookie.substring(0, 'theme='.length) == 'theme=');
     cookies[themeIndex] = 'theme='+theme;
