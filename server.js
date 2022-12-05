@@ -14,7 +14,7 @@ app.use(favicon(localPath.join(__dirname,'/public/images/favicon.ico')))
 
 app.all('/*', (req, res, next) => {
     let theme = req.cookies.theme
-    if (theme === null){
+    if (theme === undefined){
         theme = 'light';
         res.cookie('theme',theme,{
             secure: true,
@@ -39,4 +39,4 @@ app.get('/contact', (req, res) => {
     res.render('contact/index.ejs', {theme: req.theme})
 })
 
-app.listen(50080)
+app.listen(80)
