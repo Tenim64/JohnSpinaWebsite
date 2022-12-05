@@ -33,10 +33,10 @@ app.get('/producten', (req, res) => {
     res.render('producten/index.ejs', {theme: req.theme})
 })
 app.get('/workshops', (req, res) => {
-    res.render('producten/index.ejs', {theme: req.theme})
+    res.render('workshops/index.ejs', {theme: req.theme})
 })
 app.get('/contact', (req, res) => {
-    res.render('producten/index.ejs', {theme: req.theme})
+    res.render('contact/index.ejs', {theme: req.theme})
 })
 
-app.listen(80)
+app.listen(50080)
