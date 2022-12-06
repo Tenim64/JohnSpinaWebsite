@@ -33,5 +33,5 @@ function themeSetter() {
     document.cookie = cookies.join(';');
 }
 
-document.querySelector("#themeCheck").addEventListener('change', () => themeSetter());
 themeGetter();
+document.querySelector("#themeCheck").addEventListener('change', () => themeSetter());

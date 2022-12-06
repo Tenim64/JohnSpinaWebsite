@@ -80,8 +80,17 @@ i.bi {
     overflow: hidden;
     border-radius: 2rem;
 }
+.contact-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .contact-wrapper img {
-    width: 100%;
+    object-fit: cover;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
     border-radius: 2rem;
 }
 iframe {
