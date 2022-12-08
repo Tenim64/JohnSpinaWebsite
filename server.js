@@ -16,8 +16,6 @@ app.all('/*', (req, res, next) => {
     let theme = req.cookies.theme
     let themeOptions = {
         maxAge: 5000,
-        // expires works the same as the maxAge
-        expires: new Date('01 12 2021'),
         secure: true,
         sameSite: 'lax'
     };
