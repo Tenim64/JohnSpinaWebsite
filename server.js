@@ -11,6 +11,14 @@ app.set('view-engine', 'ejs')
 app.set('views', localPath.join(__dirname, 'views/pages'))
 app.use(express.static(__dirname + '/public'))
 app.use(favicon(localPath.join(__dirname,'/public/images/favicon.ico')))
+app.use(
+    helmet.contentSecurityPolicy({
+        directives: {
+          defaultSrc: ["'self'", "https://www.google.com", "https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"],
+          scriptSrc: ["'self'", "https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"],
+        },
+    })
+)
 
 app.all('/*', (req, res, next) => {
     let theme = req.cookies.theme
@@ -25,6 +33,7 @@ app.all('/*', (req, res, next) => {
     }
     req.theme = theme
     req.themeOptions = themeOptions
+    res.header("Cross-Origin-Embedder-Policy", "cross-origin")
     next()
 })
 
