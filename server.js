@@ -26,7 +26,7 @@ app.all('/*', (req, res, next) => {
         maxAge: 5000,
         secure: true,
         sameSite: 'lax'
-    };
+    }
     if (theme === undefined){
         theme = 'light';
         res.cookie('theme',theme,themeOptions)
