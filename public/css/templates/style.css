@@ -18,8 +18,14 @@
         transform: translate(75%, -150%);
     }
 }
-:root:has(#themeCheck:checked) .logo, :root:has(#themeCheck:checked) .navbar-toggler-icon, :root:has(#themeCheck:checked) .wordmap-wrapper {
+:root:has(#themeCheck:checked) .invertible {
     filter: invert(1);
+}
+:root:has(#themeCheck:checked) .box-shadow-1 {
+    box-shadow: var(--bg-color-1) 0px 2px 15px, var(--fg-color-3) 0px 1px 5px;
+}
+.box-shadow-1 {
+    box-shadow: var(--fg-color-3) 0px 3px 7px;
 }
 
 nav {

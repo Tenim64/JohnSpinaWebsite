@@ -8,7 +8,8 @@
     <div id="container">
       <%- include('../../templates/header.ejs') %>
       <div id="content" class="container-fluid">
-        <div class="row px-4 py-2 pe-lg-0 align-items-center">
+        <div id="intro"></div>
+        <div class="row px-4 py-2 pe-lg-3 align-items-center">
           <div class="col-12 offset-0 col-sm-10 offset-sm-1 col-lg-6 offset-lg-0 p-3 p-lg-5">
             <h1 class="display-3 fw-bold lh-1">John Spina's garage</h1>
             <p class="lead mt-3">Zonder John op baan, da's een flater begaan!</p>
@@ -17,7 +18,7 @@
             </div>
           </div>
           <div class="col-12 offset-0 col-sm-10 offset-sm-1 col-lg-6 offset-lg-0 p-3 p-lg-5 pe-lg-4">
-            <img class="rounded-5 d-block mx-lg-auto img-fluid pe-lg-3" src="images/ARGameRepresentation.jpeg" alt="AR game representation" width="1200" height="675" loading="lazy">
+            <img class="rounded-5 d-block mx-lg-auto img-fluid box-shadow-1" src="images/ARGameRepresentation.jpeg" alt="AR game representation" width="1200" height="675" loading="lazy">
           </div>
         </div>
         <div class="row px-4 py-2 pe-lg-0 align-items-center">
@@ -29,33 +30,29 @@
             </div>
           </div>
           <div class="col-12 offset-0 col-sm-10 offset-sm-1 order-lg-1 col-lg-6 offset-lg-0 p-3 p-lg-5 ps-lg-4">
-            <div id="carouselLocatie" class="carousel slide d-block mx-lg-auto pe-lg-3" width="1200" height="675" data-bs-ride="false">
+            <div id="carouselLocatie" class="carousel slide d-block mx-lg-auto pe-lg-3" data-bs-ride="carousel">
               <div class="carousel-indicators">
                 <button type="button" data-bs-target="#carouselLocatie" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
                 <button type="button" data-bs-target="#carouselLocatie" data-bs-slide-to="1" aria-label="Slide 2"></button>
                 <button type="button" data-bs-target="#carouselLocatie" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                <button type="button" data-bs-target="#carouselLocatie" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                <button type="button" data-bs-target="#carouselLocatie" data-bs-slide-to="4" aria-label="Slide 5"></button>
               </div>
-              <div class="carousel-inner rounded-5">
+              <div class="carousel-inner box-shadow-1 rounded-5">
                 <div class="carousel-item active">
-                  <img src="images/mediamarkt.jfif" class="d-block w-100" alt="Mediamarkt">
-                  <div class="carousel-caption d-none d-md-block">
-                    <h5>First slide label</h5>
-                    <p>Some representative placeholder content for the first slide.</p>
-                  </div>
+                  <img src="images/steam.jpg" class="d-block" alt="Steam">
                 </div>
                 <div class="carousel-item">
-                  <img src="images/oculus.png" class="d-block w-100" alt="Oculus">
-                  <div class="carousel-caption d-none d-md-block">
-                    <h5>Second slide label</h5>
-                    <p>Some representative placeholder content for the second slide.</p>
-                  </div>
+                  <img src="images/mediamarkt.jfif" class="d-block" alt="Mediamarkt">
                 </div>
                 <div class="carousel-item">
-                  <img src="images/steam.jpg" class="d-block w-100" alt="Steam">
-                  <div class="carousel-caption d-none d-md-block">
-                    <h5>Third slide label</h5>
-                    <p>Some representative placeholder content for the third slide.</p>
-                  </div>
+                  <img src="images/oculus.png" class="d-block invertible" alt="Oculus">
+                </div>
+                <div class="carousel-item">
+                  <img src="images/gamemania.webp" class="d-block" alt="Game Mania">
+                </div>
+                <div class="carousel-item">
+                  <img src="images/epicgames.png" class="d-block" alt="Epic Games">
                 </div>
               </div>
               <button class="carousel-control-prev" type="button" data-bs-target="#carouselLocatie" data-bs-slide="prev">
@@ -80,11 +77,12 @@
             </p>
           </div>
           <div class="col-10 offset-1">
-            <div class="wordmap-wrapper">
+            <div class="wordmap-wrapper invertible">
               <img src="images/wordcloud.png" alt="word cloud john spina" loading="eager">
             </div>
           </div>
         </div>
+        <div id="aanbod"></div>
         <div class="row pt-2">
           <div class="col-12">
             <h2 class="text-center pb-4 mt-5 display-5 fw-bold border-bottom">Aanbod</h2>
