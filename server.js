@@ -4,6 +4,7 @@ const favicon = require('serve-favicon')
 const localPath = require('path')
 const cookieParser = require('cookie-parser')
 const helmet = require('helmet')
+var csv = require("csvtojson");
 
 app.use(helmet())
 app.use(cookieParser())
@@ -41,7 +42,14 @@ app.get(['/', '/home'], (req, res) => {
     res.render('home/index.ejs', {'theme': req.theme})
 })
 app.get('/producten', (req, res) => {
-    res.render('producten/index.ejs', {'theme': req.theme})
+    const csvFilePath = `${__dirname}/public/aanbod.csv`;
+    let aanbod;
+    csv()
+    .fromFile(csvFilePath)
+    .then(function(jsonArrayObj){
+        aanbod = jsonArrayObj; 
+        res.render('producten/index.ejs', {'theme': req.theme, 'aanbod': aanbod})
+    })
 })
 app.get('/workshops', (req, res) => {
     res.render('workshops/index.ejs', {'theme': req.theme})

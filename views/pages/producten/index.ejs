@@ -8,7 +8,46 @@
     <div id="container">
       <%- include('../../templates/header.ejs') %>
       <div id="content" class="container-fluid">
-
+        <div class="row pt-4">
+          <div class="col col-10 offset-1">
+            <h1 class="bd-title">Aanbod:</h1>
+          </div>
+        </div>
+        <div class="row pt-4">
+          <% for(let productIndex = 0; productIndex < aanbod.length; productIndex++) {%>
+          <div class="col-10 offset-1 col-sm-5 offset-sm-<%= Number(productIndex % 2 == 0) %> col-md-3 offset-md-<%= Number(productIndex % 3 == 0) %> col-lg-2 offset-lg-<%= Number(productIndex % 5 == 0) %>">
+            <div class="card product my-3">
+              <img src="<%= 'images/'+aanbod[productIndex].src %>" class="card-img-top" alt="...">
+              <div class="card-body pb-2">
+                <h5 class="card-title mb-0"><%= aanbod[productIndex].naam %></h5>
+                <p class="card-text fs-5 d-flex justify-content-between align-items-center">
+                  <span class="mb-0"><%= aanbod[productIndex].prijs%></span>
+                  <button class="btn p-0 pe-1 pb-1" data-bs-toggle="modal" data-bs-target="#modal-addedToKart" alt="Product kopen" title="Product kopen"><i class="bi bi-basket3 fs-4"></i></button>
+                </p>
+              </div>
+            </div>
+          </div>
+          <% } %>
+        </div>
+        <div class="modal fade" id="modal-addedToKart" tabindex="-1" aria-labelledby="modal-addedToKart" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5">Bestelling voorbereiden</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <p>Uw bestelling wordt voorbereid, even geduld!</p>
+                <div class="progress">
+                  <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-label="Animated striped progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuleer</button>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
       <%- include('../../templates/footer.ejs') %>
     </div>

@@ -128,3 +128,27 @@ a.link-custom:hover {
 a.link-custom i.bi {
     padding-right: 0.7rem;
 }
+.card.product button {
+    color: var(--fg-color-3);
+    transition-property: transform !important;
+    transition-duration: 0.3s !important;
+    opacity: 0.5;
+}
+.card.product button:hover {
+    color: var(--fg-color-1);
+    opacity: 1;
+}
+@keyframes progressBarVoorbereiding {
+    0% {width: 0%;}
+    15% {width: 30%;}
+    25% {width: 35%;}
+    35% {width: 50%;}
+    65% {width: 55%;}
+    75% {width: 70%;}
+    90% {width: 75%;}
+    100% {width: 98%;}
+}
+.progress-bar {
+    width: 98%;
+    animation: progressBarVoorbereiding 4s linear, 1s linear infinite progress-bar-stripes;
+}
