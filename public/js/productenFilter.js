@@ -2,6 +2,7 @@ const filterElement = document.querySelector('#filter');
 
 function filterProducten() {
     let categorie = filterElement.value;
+    window.location.hash = '#' + categorie;
     const productElements = document.querySelectorAll('.product');
     if (categorie == ''){
         productElements.forEach(productElement => {
@@ -18,4 +19,15 @@ function filterProducten() {
     });
 }
 
+function filterMetHash() {
+    if (window.location.hash != '' || window.location.hash != '#'){
+        console.log(window.location.hash);
+        console.log(window.location.hash.replace('#', ''));
+        filterElement.value = window.location.hash.replace('#', '');
+        console.log(filterElement.value);
+        filterProducten();
+    }
+}
+
+filterMetHash();
 filterElement.addEventListener('change', () => filterProducten());

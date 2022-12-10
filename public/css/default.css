@@ -19,6 +19,9 @@
 html, body {
     overflow-x: hidden;
 }
+html, body, nav, footer, .modal {
+    padding-right: 0 !important
+}
 
 img {
     transition: var(--theme-transition-speed);
@@ -168,6 +171,14 @@ a.link-custom i.bi {
     75% {width: 70%;}
     90% {width: 75%;}
     100% {width: 98%;}
+}
+.modal.show .modal-dialog {
+    transform: translateY(-50%) !important;
+}
+.modal-dialog {
+    margin: auto;
+    margin-top: 50vh;
+    transform: translateY(-75%) !important;
 }
 .modal-content {
     background-color: var(--bg-color-2);
