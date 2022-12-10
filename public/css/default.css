@@ -30,7 +30,7 @@ img {
 #content, #content button {
     transition: all var(--theme-transition-speed) 0s;
 }
-p, small {
+p, small, span {
     color: var(--fg-color-2) !important;
     transition: all var(--theme-transition-speed);
 }
@@ -195,4 +195,24 @@ a.link-custom i.bi {
 .progress-bar {
     width: 98%;
     animation: progressBarVoorbereiding 4s linear, 1s linear infinite progress-bar-stripes;
+}
+#workshops {
+    min-height: 70vh;
+}
+#workshops {
+    overflow-y: scroll;
+    border-top: 3px solid var(--fg-color-2);
+}
+#workshops::-webkit-scrollbar {
+    display: none;
+}
+#workshops {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+#workshops h3 {
+    border-bottom: 1px solid var(--fg-color-3);
+}
+#workshops>div {
+    border-bottom: 2px solid var(--fg-color-3);
 }
