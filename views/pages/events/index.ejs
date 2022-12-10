@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="Nl-be" dir="ltr">
+  <head>
+    <%- include('../../templates/head.ejs') %>
+    <title>John Spina | events</title>
+  </head>
+  <body>
+    <div id="container">
+      <%- include('../../templates/header.ejs') %>
+      <div id="content" class="container-fluid pb-0">
+        <div class="row" id="events-wrapper">
+          <div class="col col-12 col-md-6 col-lg-4 py-2 px-0">
+            <h1 class="ps-4 pb-3">Events:</h1>
+            <div class="grid" id="events">
+              <% for(let eventIndex = 0; eventIndex < events.length; eventIndex++) {%>
+                <div class="g-col-12 px-0 mt-1 pt-2 pb-3 event">
+                  <h3 class="mb-2 pb-3 px-4"><a class="link-custom" href="#<%= eventIndex %>" data-bs-toggle="popover" data-bs-trigger="hover" data-bs-content="<%= events[eventIndex].beschrijving %>"><%= events[eventIndex].titel %></a></h3>
+                  <div class="ps-4"><i class="bi bi-clock pe-2"></i><span class="fs-5 mb-0 pe-4"><%= events[eventIndex].datum %></span></div>
+                  <div class="ps-4"><i class="bi bi-pin pe-2"></i><span class="fs-5 mb-0 pe-4"><%= events[eventIndex].locatie %></span></div>
+                  <div class="ps-4"><i class="bi bi-cash-coin pe-2"></i><span class="fs-5 mb-0 pe-4"><%= events[eventIndex].prijs %></span></div>
+                </div>
+              <% } %>
+            </div>
+          </div>
+          <div class="col col-0 d-none col-md-6 d-md-block col-lg-8 pe-3 pb-3 ps-0" id="map-wrapper">
+            <div class="placeholder w-100 h-100"><span class="fs-4">Selecteer een evenement om de kaart te tonen.</span></div>
+            <% for(let eventIndex = 0; eventIndex < events.length; eventIndex++) {%>
+              <%- events[eventIndex].iframe %>
+            <% } %>
+          </div>
+        </div>
+      </div>
+      <%- include('../../templates/footer.ejs') %>
+    </div>
+    <%- include('../../templates/foot.ejs') %>
+    <script src="js/eventsMapManager.js"></script>
+    <script src="js/bootstrapPopover.js"></script>
+  </body>
+</html>

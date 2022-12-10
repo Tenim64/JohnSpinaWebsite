@@ -51,14 +51,14 @@ app.get('/producten', (req, res) => {
         res.render('producten/index.ejs', {'theme': req.theme, 'aanbod': aanbod})
     })
 })
-app.get('/workshops', (req, res) => {
-    const csvFilePath = `${__dirname}/public/workshops.csv`;
-    let workshops;
+app.get('/events', (req, res) => {
+    const csvFilePath = `${__dirname}/public/events.csv`;
+    let events;
     csv()
     .fromFile(csvFilePath)
     .then(function(jsonArrayObj){
-        workshops = jsonArrayObj; 
-        res.render('workshops/index.ejs', {'theme': req.theme, 'workshops': workshops})
+        events = jsonArrayObj; 
+        res.render('events/index.ejs', {'theme': req.theme, 'events': events})
     })
 })
 app.get('/contact', (req, res) => {

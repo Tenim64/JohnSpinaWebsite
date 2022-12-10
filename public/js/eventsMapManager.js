@@ -1,8 +1,7 @@
 function setMap() {
     let placeholder = document.querySelector('#map-wrapper .placeholder');
 
-    let workshopIndex = window.location.hash.replace('#', '');
-    console.log(workshopIndex);
+    let evenementIndex = window.location.hash.replace('#', '');
     
     let mapWrapperChildren = document.querySelectorAll('#map-wrapper>*');
     mapWrapperChildren.forEach(child => {
@@ -10,10 +9,11 @@ function setMap() {
     });
     
     if (window.location.hash == '' || window.location.hash == '#'){
-        placeholder.style.display = 'block';
+        placeholder.style.display = '';
     }else {
-        mapWrapperChildren[workshopIndex + 1].style.display = 'block';
+        mapWrapperChildren[parseInt(evenementIndex) + 1].style.display = '';
     }
 }
 
-window.onhashchange = setMap();
+setMap();
+window.onhashchange = setMap;
