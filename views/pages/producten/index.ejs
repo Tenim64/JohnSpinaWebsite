@@ -8,15 +8,28 @@
     <div id="container">
       <%- include('../../templates/header.ejs') %>
       <div id="content" class="container-fluid">
-        <div class="row pt-4">
-          <div class="col col-10 offset-1">
+        <div class="row pt-4 pb-2 px-5 mx-md-3 mx-lg-5">
+          <div class="col col-12">
             <h1 class="bd-title">Aanbod:</h1>
           </div>
+          <div class="col col-9 col-sm-6 col-md-4 pe-md-4 col-lg-3">
+            <div class="form pe-md-2 pe-lg-4">
+              <label class="visually-hidden" for="filter">Filter</label>
+              <select class="form-select" id="filter">
+                <option class="d-none" selected>Filter</option>
+                <option value="">Alles</option>
+                <option value="online-product">Online product</option>
+                <option value="educatie">Educatie</option>
+                <option value="elektronica">Elektronica</option>
+                <option value="gereedschap">Gereedschap</option>
+              </select>
+            </div>
+          </div>
         </div>
-        <div class="row pt-4">
+        <div class="row pt-1 px-5 mx-md-3 mx-lg-5" id="producten">
           <% for(let productIndex = 0; productIndex < aanbod.length; productIndex++) {%>
-          <div class="col-10 offset-1 col-sm-5 offset-sm-<%= Number(productIndex % 2 == 0) %> col-md-3 offset-md-<%= Number(productIndex % 3 == 0) %> col-lg-2 offset-lg-<%= Number(productIndex % 5 == 0) %>">
-            <div class="card product my-3">
+          <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+            <div class="card product my-3 <%= aanbod[productIndex].categorie %>">
               <img src="<%= 'images/'+aanbod[productIndex].src %>" class="card-img-top" alt="...">
               <div class="card-body pb-2">
                 <h5 class="card-title mb-0"><%= aanbod[productIndex].naam %></h5>
@@ -34,7 +47,7 @@
             <div class="modal-content">
               <div class="modal-header">
                 <h1 class="modal-title fs-5">Bestelling voorbereiden</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <button type="button" class="btn-close invertible" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
               <div class="modal-body">
                 <p>Uw bestelling wordt voorbereid, even geduld!</p>
@@ -43,13 +56,14 @@
                 </div>
               </div>
               <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuleer</button>
+                <button type="button" class="btn" data-bs-dismiss="modal">Annuleer</button>
               </div>
             </div>
           </div>
         </div>
       </div>
       <%- include('../../templates/footer.ejs') %>
+      <script src="js/productenFilter.js"></script>
     </div>
     <%- include('../../templates/foot.ejs') %>
   </body>

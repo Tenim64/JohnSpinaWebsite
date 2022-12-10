@@ -128,10 +128,31 @@ a.link-custom:hover {
 a.link-custom i.bi {
     padding-right: 0.7rem;
 }
+.card.product {
+    background-color: var(--bg-color-1);
+    color: var(--fg-color-2);
+}
+.card.product img {
+    background-color: #f9f9f9;
+}
+.card.product .card-text, .card.product .card-title, .card.product img {
+    opacity: 0.7;
+    transition-property: opacity !important;
+    transition-duration: 0.3s !important;
+}
+.card.product .card-title, .card.product img {
+    opacity: 0.9;
+}
+.card.product:hover * {
+    opacity: 1;
+}
 .card.product button {
     color: var(--fg-color-3);
-    transition-property: transform !important;
+    transition-property: opacity !important;
     transition-duration: 0.3s !important;
+    opacity: 0.3;
+}
+.card.product:hover button {
     opacity: 0.5;
 }
 .card.product button:hover {
@@ -147,6 +168,18 @@ a.link-custom i.bi {
     75% {width: 70%;}
     90% {width: 75%;}
     100% {width: 98%;}
+}
+.modal-content {
+    background-color: var(--bg-color-2);
+    color: var(--fg-color-1);
+}
+.modal-footer button {
+    background-color: var(--bg-color-1);
+    color: var(--fg-color-2);
+}
+.modal-footer button:hover {
+    background-color: var(--bg-color-1);
+    color: var(--fg-color-1);
 }
 .progress-bar {
     width: 98%;
