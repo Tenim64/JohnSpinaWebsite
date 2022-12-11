@@ -31,3 +31,4 @@ function filterMetHash() {
 
 filterMetHash();
 filterElement.addEventListener('change', () => filterProducten());
+window.onhashchange = filterMetHash;
