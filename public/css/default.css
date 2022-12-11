@@ -209,7 +209,7 @@ a.link-custom i.bi {
 #events h3 {
     border-bottom: 1px dashed var(--fg-color-3);
 }
-#events>div {
+#events>div:not(:last-child) {
     border-bottom: 2px solid var(--fg-color-3);
 }
 #events .event, #events .event span {
