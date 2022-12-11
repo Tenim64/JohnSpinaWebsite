@@ -28,10 +28,10 @@
         </div>
         <div class="row pt-1 px-5 mx-md-3 mx-lg-5" id="producten">
           <% for(let productIndex = 0; productIndex < aanbod.length; productIndex++) {%>
-          <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-            <div class="card product my-3 <%= aanbod[productIndex].categorie %>">
-              <img src="<%= 'images/'+aanbod[productIndex].src %>" class="card-img-top" alt="...">
-              <div class="card-body pb-2">
+          <div class="col-12 col-sm-6 col-md-4 col-lg-3 my-3">
+            <div class="card product h-100 <%= aanbod[productIndex].categorie %>">
+              <div class="card-img-top"><img src="<%= 'images/'+aanbod[productIndex].src %>" alt="<%= aanbod[productIndex].src %>"></div>
+              <div class="card-body pb-2 d-flex flex-column justify-content-between">
                 <h5 class="card-title mb-0"><%= aanbod[productIndex].naam %></h5>
                 <p class="card-text fs-5 d-flex justify-content-between align-items-center">
                   <span class="mb-0"><%= aanbod[productIndex].prijs%></span>
